@@ -11,12 +11,10 @@ tmux new-window -t $SESSION:1 -n 'webserver'
 tmux select-window -t $SESSION:1
 tmux split-window -v 
 tmux send-keys 'python -m SimpleHTTPServer' C-m
-
-# Create third window
-tmux select-window -t $SESSION:1
 tmux split-window -h
 tmux send-keys 'this is a prefilled text'
 
+# Create second window
 tmux new-window -t $SESSION:2 -n 'front-end'
 tmux select-window -t $SESSION:2
 tmux send-keys 'gulp watch' C-m
